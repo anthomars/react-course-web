@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import { navLinks } from '../data/index'
 import { NavLink } from 'react-router-dom';
@@ -7,23 +7,17 @@ const NavbarComponent = () => {
     const [changeColor, setChangeColor] = useState(false)
     const [expanded, setExpanded] = useState(false)
 
-    const changeBackgroundColor = () => {
-        if (window.scrollY > 10) {
-            setChangeColor(true)
-        } else {
-            setChangeColor(false)
-        }
-    }
-
-    useEffect(() => {
-        changeBackgroundColor();
-        window.addEventListener('scroll', changeBackgroundColor);
-
-        return () => {
-            window.removeEventListener('scroll', changeBackgroundColor);
-        };
+    const handleScroll = useCallback(() => {
+        setChangeColor(window.scrollY > 10);
     }, []);
 
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [handleScroll]);
 
     return (
         <div>

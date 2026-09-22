@@ -17,11 +17,11 @@
     position: fixed;
     padding: 15px 0 15px 0;
     width: 100%;
-    transition: all .1s ease;
-    -webkit-transition: all .1s ease;
-    -moz-transition: all .1s ease;
-    -ms-transition: all .1s ease;
-    -o-transition: all .1s ease;
+    transition: all .8s ease;
+    -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -ms-transition: all .8s ease;
+    -o-transition: all .8s ease;
     z-index: 9999;
     animation-name: fadeInDown;
     animation-duration: 1s;
