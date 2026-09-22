@@ -53,6 +53,31 @@
 .navbar .nav-link .active:hover {
     color: var(--navbar-color);
 }
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    background-image: none;
+    position: relative;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before,
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+}
+
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+}
+
 /* STYLE NAVBAR */
 
 /* STYLE HOMEPAGE HEADER */
